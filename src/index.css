@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap'); */
+
+@layer base {
+  :root {
+    /* Educational Chemistry Theme */
+    --background: 210 40% 98%;
+    --foreground: 215 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 20%;
+
+    /* Primary: Deep Educational Blue */
+    --primary: 217 91% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Teal Green */
+    --secondary: 168 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted: Soft Gray-Blue */
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent: Soft Purple */
+    --accent: 270 50% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Chemistry Colors */
+    --chemistry-blue: 217 91% 45%;
+    --chemistry-green: 168 60% 45%;
+    --chemistry-purple: 270 50% 60%;
+    --chemistry-orange: 28 85% 55%;
+    --chemistry-pink: 340 70% 60%;
+    --chemistry-yellow: 45 90% 55%;
+    --chemistry-red: 0 70% 55%;
+    --chemistry-cyan: 190 80% 45%;
+
+    /* Mind Map Node Colors */
+    --node-primary: 217 91% 45%;
+    --node-secondary: 168 60% 45%;
+    --node-accent: 270 50% 60%;
+    --node-warning: 28 85% 55%;
+    --node-success: 142 60% 45%;
+    --node-info: 190 80% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 30% 88%;
+    --input: 214 30% 88%;
+    --ring: 217 91% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 45%), hsl(217 91% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(168 60% 45%), hsl(168 60% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(270 50% 60%), hsl(270 50% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 45%) 0%, hsl(270 50% 55%) 50%, hsl(168 60% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-node: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 30% 96%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(215 25% 20% / 0.08);
+    --shadow-md: 0 4px 16px -4px hsl(215 25% 20% / 0.12);
+    --shadow-lg: 0 8px 32px -8px hsl(215 25% 20% / 0.16);
+    --shadow-node: 0 4px 20px -4px hsl(217 91% 45% / 0.15);
+    --shadow-glow: 0 0 30px hsl(217 91% 45% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 210 40% 96%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 217 91% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 168 60% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 270 50% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 217 91% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .mind-map-container {
+    @apply relative w-full min-h-[600px] p-8;
+    background: 
+      radial-gradient(circle at 20% 30%, hsl(var(--chemistry-blue) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(var(--chemistry-green) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(var(--chemistry-purple) / 0.02) 0%, transparent 60%);
+  }
+
+  .node-connector {
+    @apply absolute bg-gradient-to-r from-primary/30 to-secondary/30;
+    height: 3px;
+    transform-origin: left center;
+    border-radius: 2px;
+  }
+
+  .node-base {
+    @apply relative p-4 rounded-2xl border-2 transition-all duration-300;
+    background: var(--gradient-node);
+    box-shadow: var(--shadow-node);
+  }
+
+  .node-base:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+  }
+
+  .node-primary {
+    @apply node-base border-primary/30;
+  }
+
+  .node-secondary {
+    @apply node-base border-secondary/30;
+  }
+
+  .node-accent {
+    @apply node-base border-accent/30;
+  }
+
+  .node-center {
+    @apply node-base border-primary text-center;
+    background: var(--gradient-primary);
+    @apply text-primary-foreground;
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/20;
+    background: hsl(0 0% 100% / 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .molecule-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3Cpath d='M30 30L10 10M30 30L50 50' stroke='%232563eb' stroke-width='1' stroke-opacity='0.05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(48px);
+    opacity: 0;
+  }
+}
+
+.rain-drop {
+  width: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to bottom,
+    rgba(113, 34, 197, 0.85),
+    rgba(84, 75, 223, 0.15)
+  );
+  animation-name: rain;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* rgba(34, 197, 94, 0.85),
+    rgba(34, 197, 94, 0.15) */
+
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
