@@ -5,6 +5,7 @@ import svgr from 'vite-plugin-svgr'
 
 
 export default defineConfig(({ mode }) => ({
+  base: '/quimica-interessante/',
   server: {
     base:'/',
     host: "::",
