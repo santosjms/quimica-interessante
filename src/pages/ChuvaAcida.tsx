@@ -1,6 +1,17 @@
+import { useState } from 'react';
+
 import { Layout } from "@/components/layout/Layout";
 import { MindMapContainer } from "@/components/mindmap/MindMapContainer";
 import { ChemicalFormula } from "@/components/mindmap/ChemicalFormula";
+
+import Torre from '@/assets/images/torre.png';
+import Carvao from '@/assets/images/Carvao.png';
+import Florestas from '@/assets/images/Florestas.png';
+import Aguas from '@/assets/images/Aguas.png';
+import Cloud from '@/assets/images/cloud.png';
+import Fabrica from '@/assets/images/Fábrica.png';
+import Carro from '@/assets/images/Carro.png';
+
 
 const RAIN_DROPS = [
   { left: 5, top: 0, height: 18, delay: 0, duration: 1.2, opacity: 0.6 },
@@ -36,7 +47,7 @@ export default function ChuvaAcida() {
               <div className="flex flex-wrap justify-center gap-8">
                 <div className="flex flex-col items-center">
                   <img
-                    src="/images/torre.png"
+                    src={Torre}
                     alt="Petróleo"
                     className="w-24 sm:w-32 md:w-40 object-contain"
                   />
@@ -45,7 +56,7 @@ export default function ChuvaAcida() {
 
                 <div className="flex flex-col items-center">
                   <img
-                    src="/images/Carvao.png"
+                    src={Carvao}
                     alt="Carvão"
                     className="w-24 sm:w-32 md:w-40 object-contain"
                   />
@@ -61,7 +72,7 @@ export default function ChuvaAcida() {
               <div className="flex flex-wrap justify-center gap-8">
                 <div className="flex flex-col items-center">
                   <img
-                    src="/images/Florestas.png"
+                    src={Florestas}
                     alt="Florestas"
                     className="w-24 sm:w-32 md:w-40 object-contain"
                   />
@@ -70,7 +81,7 @@ export default function ChuvaAcida() {
 
                 <div className="flex flex-col items-center">
                   <img
-                    src="/images/Aguas.png"
+                    src={Aguas}
                     alt="Águas e Solos"
                     className="w-24 sm:w-32 md:w-40 object-contain"
                   />
@@ -85,7 +96,7 @@ export default function ChuvaAcida() {
             <div className="relative flex flex-col items-center animate-[float_4s_ease-in-out_infinite]">
 
               <img
-                src="/images/cloud.png"
+                src={Cloud}
                 alt="Nuvem de chuva ácida"
                 className="w-72 sm:w-80 md:w-96"
               />
@@ -125,7 +136,7 @@ export default function ChuvaAcida() {
               <div className="flex flex-wrap justify-center gap-8">
                 <div className="flex flex-col items-center">
                   <img
-                    src="/images/Fábrica.png"
+                    src={Fabrica}
                     alt="Fábricas"
                     className="w-24 sm:w-32 md:w-40 object-contain"
                   />
@@ -134,7 +145,7 @@ export default function ChuvaAcida() {
 
                 <div className="flex flex-col items-center">
                   <img
-                    src="/images/Carro.png"
+                    src={Carro}
                     alt="Queima de combustível"
                     className="w-24 sm:w-32 md:w-40 object-contain"
                   />
